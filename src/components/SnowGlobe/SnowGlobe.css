@@ -1,0 +1,256 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #0a1628 0%, #1a2a4a 40%, #2a3a5a 70%, #1a2a4a 100%);
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+h1 {
+  color: #fff;
+  margin-block: 40px;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+#toggle { display: none; }
+
+.snowglobe-container { position: relative; width: 340px; height: 520px; }
+
+.globe {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 50%, rgba(200, 220, 240, 0.08) 0%, rgba(180, 200, 220, 0.05) 50%, rgba(150, 180, 200, 0.1) 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 60px rgba(255, 255, 255, 0.08), inset 0 0 80px rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.globe::before {
+  content: '';
+  position: absolute;
+  top: 8%; left: 15%;
+  width: 55%; height: 35%;
+  background: radial-gradient(ellipse at 50% 30%, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 30%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 30;
+}
+
+.globe::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 25%), radial-gradient(ellipse at 80% 75%, rgba(255,255,255,0.08) 0%, transparent 20%);
+  pointer-events: none;
+  z-index: 30;
+}
+
+.glass-layer {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 25;
+  background: radial-gradient(ellipse at 25% 25%, rgba(255,255,255,0.3) 0%, transparent 40%), radial-gradient(ellipse at 75% 80%, rgba(255,255,255,0.1) 0%, transparent 30%);
+}
+
+.globe-inner {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65px;
+  background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(240,248,255,0.9) 60%, rgba(220,240,255,0.3) 100%);
+  border-radius: 0 0 140px 140px;
+  z-index: 2;
+}
+
+.logo {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  width: 120px; height: auto;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.tree-container {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%) scale(2.5);
+  transform-origin: bottom center;
+  z-index: 4;
+}
+
+.tree {
+  position: relative;
+  width: 0; height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid #1a5f2a;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.tree::before {
+  content: '';
+  position: absolute;
+  top: 18px; left: -18px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 35px solid #228B22;
+}
+
+.tree::after {
+  content: '';
+  position: absolute;
+  top: 32px; left: -12px;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 25px solid #2d9e3f;
+}
+
+.star {
+  position: absolute;
+  top: -15px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #ffd700;
+  text-shadow: 0 0 8px #ffd700, 0 0 15px #ffa500;
+}
+
+.base {
+  position: absolute;
+  top: 250px; left: 50%;
+  transform: translateX(-50%);
+  width: 320px; height: 200px;
+}
+
+.base-connector {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 160px; height: 30px;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 50%, #e0e0e0 100%);
+  border-radius: 0 0 20px 20px;
+  box-shadow: inset 0 5px 10px rgba(255,255,255,0.8), 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.base-top {
+  position: absolute;
+  top: 25px; left: 50%;
+  transform: translateX(-50%);
+  width: 240px; height: 40px;
+  background: linear-gradient(to bottom, #f8f8f8 0%, #f0f0f0 50%, #e5e5e5 100%);
+  border-radius: 15px 15px 0 0;
+  box-shadow: inset 0 5px 15px rgba(255,255,255,0.9), inset 0 -3px 10px rgba(0,0,0,0.05);
+}
+
+.base-body {
+  position: absolute;
+  top: 60px; left: 50%;
+  transform: translateX(-50%);
+  width: 260px; height: 100px;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #ececec 30%, #e0e0e0 70%, #d5d5d5 100%);
+  border-radius: 0 0 30px 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25), inset 0 5px 20px rgba(255,255,255,0.6), inset 0 -5px 15px rgba(0,0,0,0.08);
+}
+
+.base-body::before {
+  content: 'Snow Globe';
+  position: absolute;
+  top: 15px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  color: rgba(120,120,120,0.6);
+  letter-spacing: 0.2em;
+  font-weight: 300;
+}
+
+.shake-btn {
+  position: absolute;
+  top: 100px; left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(231,76,60,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+  z-index: 30;
+  display: grid;
+	place-items: center;
+}
+
+.shake-btn:hover {
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231,76,60,0.5);
+}
+
+#toggle:checked ~ .snowglobe-container .shake-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
+  box-shadow: 0 4px 15px rgba(39,174,96,0.4);
+}
+
+.particles {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.p {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.9;
+  will-change: transform;
+  animation-play-state: paused !important;
+}
+
+.s { background: white; box-shadow: 0 0 4px rgba(255,255,255,0.9); }
+.g { background: #ffd700; box-shadow: 0 0 6px #ffd700, 0 0 10px #ffd700; }
+.b { background: #87ceeb; box-shadow: 0 0 6px #87ceeb, 0 0 10px #87ceeb; }
+.k { background: #ffb6c1; box-shadow: 0 0 6px #ffb6c1, 0 0 10px #ffb6c1; }
+.w { background: #fff; box-shadow: 0 0 6px #fff, 0 0 10px #fff; }
+
+@keyframes a1 { 0%,100%{transform:translate(0,0)}6%{transform:translate(-40px,-200px)}12%{transform:translate(-100px,-235px)}20%{transform:translate(-110px,-210px)}30%{transform:translate(-90px,-230px)}45%{transform:translate(-75px,-140px)}62%{transform:translate(-50px,-60px)}82%{transform:translate(-15px,0)} }
+@keyframes a2 { 0%,100%{transform:translate(0,0)}7%{transform:translate(-30px,-210px)}14%{transform:translate(-85px,-240px)}22%{transform:translate(-95px,-220px)}32%{transform:translate(-80px,-235px)}48%{transform:translate(-65px,-130px)}65%{transform:translate(-40px,-50px)}84%{transform:translate(-10px,5px)} }
+@keyframes a3 { 0%,100%{transform:translate(0,0)}6%{transform:translate(45px,-205px)}12%{transform:translate(105px,-230px)}20%{transform:translate(115px,-205px)}30%{transform:translate(95px,-225px)}45%{transform:translate(80px,-135px)}62%{transform:translate(50px,-55px)}82%{transform:translate(12px,0)} }
+@keyframes a4 { 0%,100%{transform:translate(0,0)}7%{transform:translate(35px,-215px)}14%{transform:translate(90px,-238px)}22%{transform:translate(100px,-215px)}32%{transform:translate(85px,-230px)}48%{transform:translate(70px,-125px)}65%{transform:translate(45px,-45px)}84%{transform:translate(8px,5px)} }
+@keyframes a5 { 0%,100%{transform:translate(0,0)}7%{transform:translate(15px,-220px)}15%{transform:translate(-35px,-240px)}24%{transform:translate(45px,-230px)}34%{transform:translate(-25px,-238px)}50%{transform:translate(20px,-140px)}68%{transform:translate(-15px,-55px)}85%{transform:translate(5px,0)} }
+@keyframes a6 { 0%,100%{transform:translate(0,0)}8%{transform:translate(-20px,-215px)}16%{transform:translate(40px,-238px)}25%{transform:translate(-50px,-225px)}35%{transform:translate(30px,-235px)}52%{transform:translate(-20px,-135px)}70%{transform:translate(10px,-50px)}86%{transform:translate(-5px,5px)} }
+@keyframes a7 { 0%,100%{transform:translate(0,0)}7%{transform:translate(-70px,-210px)}15%{transform:translate(-95px,-240px)}25%{transform:translate(-75px,-235px)}37%{transform:translate(-85px,-220px)}52%{transform:translate(-60px,-150px)}70%{transform:translate(-35px,-60px)}86%{transform:translate(-8px,0)} }
+@keyframes a8 { 0%,100%{transform:translate(0,0)}7%{transform:translate(75px,-205px)}15%{transform:translate(100px,-238px)}25%{transform:translate(80px,-230px)}37%{transform:translate(90px,-215px)}52%{transform:translate(65px,-145px)}70%{transform:translate(40px,-55px)}86%{transform:translate(10px,0)} }
+@keyframes a9 { 0%,100%{transform:translate(0,0)}8%{transform:translate(5px,-225px)}16%{transform:translate(-15px,-242px)}26%{transform:translate(20px,-240px)}38%{transform:translate(-10px,-238px)}54%{transform:translate(15px,-160px)}72%{transform:translate(-8px,-70px)}88%{transform:translate(3px,0)} }
+@keyframes tw { 0%,100%{filter:brightness(1)}50%{filter:brightness(2.2)} }
+
+#toggle:checked ~ .snowglobe-container .p { animation-play-state: running !important; }
+
+.hint { color: rgba(255,255,255,0.5); margin-top: 30px; font-size: 0.85rem; letter-spacing: 0.05em; }
+
+.globe img {
+  max-width: 200px;
+  width: 100%;
+}
