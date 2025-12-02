@@ -1,3 +1,4 @@
+import "./App.css";
 import SnowGlobe from "./components/SnowGlobe/SnowGlobe";
 
 function App() {
