@@ -124,6 +124,11 @@ h1 {
   border-bottom: 25px solid #2d9e3f;
 }
 
+.tree-image {
+  width: 120px;       /* 大きさは自由に調整 */
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
 .star {
   position: absolute;
   top: -15px; left: 50%;

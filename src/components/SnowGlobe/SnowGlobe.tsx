@@ -10,17 +10,17 @@ const SnowGlobe = () => {
       <h1>✨ Merry Christmas ✨</h1>
       <input type="checkbox" id="toggle" className="check_box" />
 
-      <div className="snowglobee-container">
+      <div className="snowglobe-container">
         <div className="globe">
           {/* 粒子（雪＋ラメ） */}
           <SnowParticles />
           <div className="globe-inner"></div>
           {/* ロゴ */}
-          <img
+          {/* <img
             src="http://tsurupiyoblog.com/wp-content/uploads/2025/11/chrisumasu_logo.png"
             alt="Logo"
             className="logo"
-          />
+          /> */}
           {/* tree */}
           <SnowTree />
         </div>
