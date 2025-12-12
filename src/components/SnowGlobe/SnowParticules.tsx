@@ -27,7 +27,7 @@ export default function SnowParticles() {
     }
 
     // ラメ 400個
-    for (let i = 0; i < 400; i++) {
+    for (let i = 0; i < 100; i++) {
       const d = document.createElement("div");
       const size = 1.5 + Math.random() * 3;
       const left = 5 + Math.random() * 90;
