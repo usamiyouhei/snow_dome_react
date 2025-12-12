@@ -9,7 +9,7 @@ export default function SnowParticles() {
     const colors = ["g", "b", "k", "w"];
 
     // 雪 160個
-    for (let i = 0; i < 160; i++) {
+    for (let i = 0; i < 100; i++) {
       const d = document.createElement("div");
       const size = 2 + Math.random() * 4;
       const left = 8 + Math.random() * 84;
@@ -20,14 +20,14 @@ export default function SnowParticles() {
       d.className = "p s";
       d.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${left}%;bottom:${bottom}px;
+        left:${left}%;bottom:${bottom}%;
         animation:${anim} ${dur}s ease-in-out ${delay}s infinite;
       `;
       c.appendChild(d);
     }
 
     // ラメ 400個
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 150; i++) {
       const d = document.createElement("div");
       const size = 1.5 + Math.random() * 3;
       const left = 5 + Math.random() * 90;
@@ -40,7 +40,7 @@ export default function SnowParticles() {
       d.className = `p ${color}`;
       d.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${left}%;bottom:${bottom}px;
+        left:${left}%;bottom:${bottom}%;
         animation:${anim} ${dur}s ease-in-out ${delay}s infinite, tw ${twDur}s infinite;
       `;
       c.appendChild(d);
