@@ -9,11 +9,11 @@ export default function SnowParticles() {
     const colors = ["g", "b", "k", "w"];
 
     // 雪 160個
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 70; i++) {
       const d = document.createElement("div");
       const size = 2 + Math.random() * 4;
       const left = 8 + Math.random() * 84;
-      const bottom = 10 + Math.random() * 25;
+      const bottom = 5 + Math.random() * 25;
       const anim = anims[Math.floor(Math.random() * anims.length)];
       const dur = 11 + Math.random() * 6;
       const delay = Math.random() * 6;
@@ -27,11 +27,11 @@ export default function SnowParticles() {
     }
 
     // ラメ 400個
-    for (let i = 0; i < 150; i++) {
+    for (let i = 0; i < 120; i++) {
       const d = document.createElement("div");
       const size = 1.5 + Math.random() * 3;
       const left = 5 + Math.random() * 90;
-      const bottom = 8 + Math.random() * 30;
+      const bottom = 5 + Math.random() * 30;
       const anim = anims[Math.floor(Math.random() * anims.length)];
       const color = colors[i % 4];
       const dur = 13 + Math.random() * 5;

@@ -1,7 +1,7 @@
 // import React from "react";
 import "./SnowGlobe.css";
 import SnowParticles from "./SnowParticules";
-// import SnowTree from "./SnowTree";
+import SnowTree from "./SnowTree";
 import SnowGlobeBase from "./SnowGlobeBase";
 import SnowTreePhoto from "./SnowTreePhoto";
 
