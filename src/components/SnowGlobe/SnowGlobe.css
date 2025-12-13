@@ -102,28 +102,28 @@ h1 {
 .tree {
   position: relative;
   width: 0; height: 0;
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent;
-  border-bottom: 50px solid #1a5f2a;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 65px solid #1a5f2a;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .tree::before {
   content: '';
   position: absolute;
-  top: 18px; left: -18px;
-  border-left: 18px solid transparent;
-  border-right: 18px solid transparent;
-  border-bottom: 35px solid #228B22;
+  top: 22px; left: -22px;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 45px solid #228B22;
 }
 
 .tree::after {
   content: '';
   position: absolute;
-  top: 32px; left: -12px;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 25px solid #2d9e3f;
+  top: 40px; left: -16px;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 35px solid #2d9e3f;
 }
 
 .tree-image {
@@ -242,7 +242,7 @@ h1 {
 .k { background: #ffb6c1; box-shadow: 0 0 6px #ffb6c1, 0 0 10px #ffb6c1; }
 .w { background: #fff; box-shadow: 0 0 6px #fff, 0 0 10px #fff; }
 
-@keyframes a1 {
+/* @keyframes a1 {
   0%, 100% { transform: translate(0, 0); }
   20% { transform: translate(-20%, -60%); }
   40% { transform: translate(-40%, -100%); }
@@ -262,10 +262,10 @@ h1 {
   40% { transform: translate(35%, -100%); }
   60% { transform: translate(25%, -75%); }
   80% { transform: translate(5%, -20%); }
-}
-/* @keyframes a1 { 0%,100%{transform:translate(0,0)}6%{transform:translate(-40px,-200px)}12%{transform:translate(-100px,-235px)}20%{transform:translate(-110px,-210px)}30%{transform:translate(-90px,-230px)}45%{transform:translate(-75px,-140px)}62%{transform:translate(-50px,-60px)}82%{transform:translate(-15px,0)} } */
-/* @keyframes a2 { 0%,100%{transform:translate(0,0)}7%{transform:translate(-30px,-210px)}14%{transform:translate(-85px,-240px)}22%{transform:translate(-95px,-220px)}32%{transform:translate(-80px,-235px)}48%{transform:translate(-65px,-130px)}65%{transform:translate(-40px,-50px)}84%{transform:translate(-10px,5px)} } */
-/* @keyframes a3 { 0%,100%{transform:translate(0,0)}6%{transform:translate(45px,-205px)}12%{transform:translate(105px,-230px)}20%{transform:translate(115px,-205px)}30%{transform:translate(95px,-225px)}45%{transform:translate(80px,-135px)}62%{transform:translate(50px,-55px)}82%{transform:translate(12px,0)} } */
+} */
+@keyframes a1 { 0%,100%{transform:translate(0,0)}6%{transform:translate(-40px,-200px)}12%{transform:translate(-100px,-235px)}20%{transform:translate(-110px,-210px)}30%{transform:translate(-90px,-230px)}45%{transform:translate(-75px,-140px)}62%{transform:translate(-50px,-60px)}82%{transform:translate(-15px,0)} }
+@keyframes a2 { 0%,100%{transform:translate(0,0)}7%{transform:translate(-30px,-210px)}14%{transform:translate(-85px,-240px)}22%{transform:translate(-95px,-220px)}32%{transform:translate(-80px,-235px)}48%{transform:translate(-65px,-130px)}65%{transform:translate(-40px,-50px)}84%{transform:translate(-10px,5px)} }
+@keyframes a3 { 0%,100%{transform:translate(0,0)}6%{transform:translate(45px,-205px)}12%{transform:translate(105px,-230px)}20%{transform:translate(115px,-205px)}30%{transform:translate(95px,-225px)}45%{transform:translate(80px,-135px)}62%{transform:translate(50px,-55px)}82%{transform:translate(12px,0)} }
 @keyframes a4 { 0%,100%{transform:translate(0,0)}7%{transform:translate(35px,-215px)}14%{transform:translate(90px,-238px)}22%{transform:translate(100px,-215px)}32%{transform:translate(85px,-230px)}48%{transform:translate(70px,-125px)}65%{transform:translate(45px,-45px)}84%{transform:translate(8px,5px)} }
 @keyframes a5 { 0%,100%{transform:translate(0,0)}7%{transform:translate(15px,-220px)}15%{transform:translate(-35px,-240px)}24%{transform:translate(45px,-230px)}34%{transform:translate(-25px,-238px)}50%{transform:translate(20px,-140px)}68%{transform:translate(-15px,-55px)}85%{transform:translate(5px,0)} }
 @keyframes a6 { 0%,100%{transform:translate(0,0)}8%{transform:translate(-20px,-215px)}16%{transform:translate(40px,-238px)}25%{transform:translate(-50px,-225px)}35%{transform:translate(30px,-235px)}52%{transform:translate(-20px,-135px)}70%{transform:translate(10px,-50px)}86%{transform:translate(-5px,5px)} }
