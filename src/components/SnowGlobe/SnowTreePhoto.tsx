@@ -1,4 +1,4 @@
-import treeImg from "../../assets/img/tree.jpeg";
+import treeImg from "../../assets/img/EXPO_tree.jpeg";
 
 import React from "react";
 
