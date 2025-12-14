@@ -10,17 +10,17 @@ export type TreePhoto = {
 export const treePhotos = [
   {
     id: "EXPO_tree",
-    label: "Tree",
+    label: "EXPO Tree🌲",
     src: EXPOTreeImg,
   },
   {
     id: "jumeirahTree",
-    label: "Tree",
+    label: "Jumeirah Tree🌲",
     src: jumeirahTreeImg,
   },
   {
     id: "jumeirah_Santa",
-    label: "santa",
+    label: "Jumeirah Santa🎅",
     src: jumeirahSantaImg,
   },
 ];
