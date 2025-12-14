@@ -2,11 +2,19 @@ import EXPOTreeImg from "../../assets/img/EXPO_tree.jpeg";
 import jumeirahTreeImg from "../../assets/img/jumeirah.jpg";
 import jumeirahSantaImg from "../../assets/img/jumeirah_santa.JPG";
 
-export type TreePhoto = {
-  id: string;
-  label: string;
-  src: string;
-};
+export type TreeTab =
+  | {
+      id: string;
+      label: string;
+      type: "photo";
+      src: string;
+    }
+  | {
+      id: string;
+      label: string;
+      type: "css";
+    };
+
 export const treePhotos = [
   {
     id: "EXPO_tree",
