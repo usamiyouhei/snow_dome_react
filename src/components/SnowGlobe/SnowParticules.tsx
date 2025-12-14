@@ -13,14 +13,14 @@ export default function SnowParticles() {
       const d = document.createElement("div");
       const size = 2 + Math.random() * 4;
       const left = 8 + Math.random() * 84;
-      const bottom = 5 + Math.random() * 25;
+      const bottom = 5 + Math.random() * 90;
       const anim = anims[Math.floor(Math.random() * anims.length)];
       const dur = 11 + Math.random() * 6;
       const delay = Math.random() * 6;
       d.className = "p s";
       d.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${left}%;bottom:${bottom}%;
+        left:${left}%;bottom:${bottom}px;
         animation:${anim} ${dur}s ease-in-out ${delay}s infinite;
       `;
       c.appendChild(d);
@@ -31,7 +31,7 @@ export default function SnowParticles() {
       const d = document.createElement("div");
       const size = 1.5 + Math.random() * 3;
       const left = 5 + Math.random() * 90;
-      const bottom = 5 + Math.random() * 30;
+      const bottom = 5 + Math.random() * 90;
       const anim = anims[Math.floor(Math.random() * anims.length)];
       const color = colors[i % 4];
       const dur = 13 + Math.random() * 5;
@@ -40,7 +40,7 @@ export default function SnowParticles() {
       d.className = `p ${color}`;
       d.style.cssText = `
         width:${size}px;height:${size}px;
-        left:${left}%;bottom:${bottom}%;
+        left:${left}%;bottom:${bottom}px;
         animation:${anim} ${dur}s ease-in-out ${delay}s infinite, tw ${twDur}s infinite;
       `;
       c.appendChild(d);

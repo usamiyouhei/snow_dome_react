@@ -1,13 +1,15 @@
-import treeImg from "../../assets/img/EXPO_tree.jpeg";
+// import treeImg from "../../assets/img/EXPO_tree.jpeg";
 
-import React from "react";
+// import React from "react";
 
-const SnowTreePhoto = () => {
-  return (
-    <div className="tree-photo">
-      <img src={treeImg} alt="tree" className="tree-image" />
-    </div>
-  );
+type Props = {
+  src: string;
 };
 
-export default SnowTreePhoto;
+export default function SnowTreePhoto({ src }: Props) {
+  return (
+    <div className="tree-photo">
+      <img src={src} alt="tree" className="tree-image" />
+    </div>
+  );
+}
