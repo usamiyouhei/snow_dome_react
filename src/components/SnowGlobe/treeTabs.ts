@@ -15,20 +15,28 @@ export type TreeTab =
       type: "css";
     };
 
-export const treePhotos = [
+export const treeTabs: TreeTab[] = [
+  {
+    id: "css-tree",
+    label: "CSS Tree🌲",
+    type: "css",
+  },
   {
     id: "EXPO_tree",
     label: "EXPO Tree🌲",
+    type: "photo",
     src: EXPOTreeImg,
   },
   {
     id: "jumeirahTree",
     label: "Jumeirah Tree🌲",
+    type: "photo",
     src: jumeirahTreeImg,
   },
   {
     id: "jumeirah_Santa",
     label: "Jumeirah Santa🎅",
+    type: "photo",
     src: jumeirahSantaImg,
   },
 ];
