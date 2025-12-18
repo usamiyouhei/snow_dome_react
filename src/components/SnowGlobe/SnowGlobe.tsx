@@ -35,46 +35,47 @@ const SnowGlobe = () => {
       </div>
       <input type="checkbox" id="toggle" className="check_box" />
 
-      <div className="snowglobe-container">
-        <div className="globe">
-          {/* 粒子（雪＋ラメ） */}
-          <SnowParticles />
-          <div className="tree-layer is-active">
-            {active.type === "css" && <SnowTree />}
-            {active.type === "photo" && (
-              <SnowTreePhoto src={customImage ?? active.src} />
-            )}
+      <div className="snowGlobe-wrapper">
+        <div className="snowglobe-container">
+          <div className="globe">
+            {/* 粒子（雪＋ラメ） */}
+            <SnowParticles />
+            <div className="tree-layer is-active">
+              {active.type === "css" && <SnowTree />}
+              {active.type === "photo" && (
+                <SnowTreePhoto src={customImage ?? active.src} />
+              )}
+            </div>
+            <div className="globe-inner" />
           </div>
-          <div className="globe-inner" />
+          {/* ガラス層 */}
+          <div className="glass-layer"></div>
+
+          {/* 土台 */}
+          <SnowGlobeBase />
         </div>
-        {/* ガラス層 */}
-        <div className="glass-layer"></div>
+        <div className="custom-image-panel">
+          <label className="custom-label">
+            Upload Image
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                setCustomImage(URL.createObjectURL(file));
+              }}
+              hidden
+            />
+          </label>
 
-        {/* 土台 */}
-        <SnowGlobeBase />
-      </div>
-
-      <div className="custom-image-panel">
-        <label className="custom-label">
-          Upload Image
           <input
-            type="file"
-            accept="image/*"
-            onChange={(e) => {
-              const file = e.target.files?.[0];
-              if (!file) return;
-              setCustomImage(URL.createObjectURL(file));
-            }}
-            hidden
+            className="custom-url"
+            type="text"
+            placeholder="Or paste image URL"
+            onBlur={(e) => setCustomImage(e.target.value)}
           />
-        </label>
-
-        <input
-          className="custom-url"
-          type="text"
-          placeholder="Or paste image URL"
-          onBlur={(e) => setCustomImage(e.target.value)}
-        />
+        </div>
       </div>
     </>
   );
