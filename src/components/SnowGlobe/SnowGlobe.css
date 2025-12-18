@@ -8,6 +8,7 @@
 :root {
   --globe-size: 340px;
   --container-width: 420px;
+  --base-gap: -10px;
 }
 body {
   min-height: 100vh;
@@ -33,6 +34,12 @@ h1 {
 
 #toggle { display: none; }
 
+.snowglobe-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px; /* ← ここで距離を決める */
+}
 .snowglobe-container {
   position: relative;
   width: var(--container-width);
@@ -158,10 +165,10 @@ h1 {
 }
 
 .base {
-  position: absolute;
-  top: 320px; left: 50%;
+ position: absolute;
+  top: calc(var(--globe-size) + var(--base-gap));
+  left: 50%;
   transform: translateX(-50%);
-  width: 380px; height: 230px;
 }
 
 .base-connector {
@@ -397,7 +404,7 @@ h1 {
 
 
 .custom-image-panel {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   display: flex;
   gap: 12px;
   align-items: center;
@@ -428,25 +435,16 @@ h1 {
   color: #fff;
 }
 
-@media (max-width: 360px) {
-  :root {
-    --globe-size: 230px;
-    --container-width: 290px;
-  }
-}
-
 @media (max-width: 480px) {
   :root {
     --globe-size: 260px;
-    --container-width: 320px;
+    --base-gap: -8px;
   }
+}
 
-  h1 {
-    font-size: 1.4rem;
-    margin-block: 24px;
-  }
-   .tab {
-    font-size: 0.7rem;
-    padding: 5px 12px;
+@media (max-width: 360px) {
+  :root {
+    --globe-size: 230px;
+    --base-gap: -6px;
   }
 }
