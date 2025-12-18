@@ -4,7 +4,7 @@ import SnowParticles from "./SnowParticules";
 import SnowTree from "./SnowTree";
 import SnowGlobeBase from "./SnowGlobeBase";
 import SnowTreePhoto from "./SnowTreePhoto";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { treePhotos } from "./TreePhotos";
 import { treeTabs } from "./treeTabs";
 import type { TreeTab } from "./treeTabs";
@@ -12,6 +12,12 @@ import type { TreeTab } from "./treeTabs";
 const SnowGlobe = () => {
   const [active, setActive] = useState<TreeTab>(treeTabs[0]);
   const [customImage, setCustomImage] = useState<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (customImage) URL.revokeObjectURL(customImage);
+    };
+  }, [customImage]);
 
   return (
     <>
@@ -48,17 +54,26 @@ const SnowGlobe = () => {
         <SnowGlobeBase />
       </div>
 
-      <div className="file-input">
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => {
-            const file = e.target.files?.[0];
-            if (!file) return;
+      <div className="custom-image-panel">
+        <label className="custom-label">
+          Upload Image
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (!file) return;
+              setCustomImage(URL.createObjectURL(file));
+            }}
+            hidden
+          />
+        </label>
 
-            const url = URL.createObjectURL(file);
-            setCustomImage(url);
-          }}
+        <input
+          className="custom-url"
+          type="text"
+          placeholder="Or paste image URL"
+          onBlur={(e) => setCustomImage(e.target.value)}
         />
       </div>
     </>
