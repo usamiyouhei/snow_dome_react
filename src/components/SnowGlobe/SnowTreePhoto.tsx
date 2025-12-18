@@ -7,6 +7,8 @@ type Props = {
 };
 
 export default function SnowTreePhoto({ src }: Props) {
+  console.log("SnowTreePhoto src:", src);
+
   return (
     <div className="tree-photo">
       <img src={src} alt="tree" className="tree-image" />
