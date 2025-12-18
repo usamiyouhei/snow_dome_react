@@ -11,6 +11,7 @@ import type { TreeTab } from "./treeTabs";
 
 const SnowGlobe = () => {
   const [active, setActive] = useState<TreeTab>(treeTabs[0]);
+  const [customImage, setCustomImage] = useState<string | null>(null);
 
   return (
     <>
@@ -32,9 +33,11 @@ const SnowGlobe = () => {
         <div className="globe">
           {/* 粒子（雪＋ラメ） */}
           <SnowParticles />
-          <div className="tree-layer is-active" key={active.id}>
+          <div className="tree-layer is-active">
             {active.type === "css" && <SnowTree />}
-            {active.type === "photo" && <SnowTreePhoto src={active.src} />}
+            {active.type === "photo" && (
+              <SnowTreePhoto src={customImage ?? active.src} />
+            )}
           </div>
           <div className="globe-inner" />
         </div>
@@ -43,6 +46,20 @@ const SnowGlobe = () => {
 
         {/* 土台 */}
         <SnowGlobeBase />
+      </div>
+
+      <div className="file-input">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+
+            const url = URL.createObjectURL(file);
+            setCustomImage(url);
+          }}
+        />
       </div>
     </>
   );
