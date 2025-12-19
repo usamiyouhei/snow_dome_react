@@ -37,22 +37,25 @@ const SnowGlobe = () => {
 
       <div className="snowglobe-wrapper">
         <div className="snowglobe-container">
-          <div className="globe">
-            {/* 粒子（雪＋ラメ） */}
-            <SnowParticles />
-            <div className="tree-layer is-active">
-              {active.type === "css" && <SnowTree />}
-              {active.type === "photo" && (
-                <SnowTreePhoto src={customImage ?? active.src} />
-              )}
+          <div className="globe-wrap">
+            <div className="globe">
+              {/* 粒子（雪＋ラメ） */}
+              <SnowParticles />
+              <div className="tree-layer is-active">
+                {active.type === "css" && <SnowTree />}
+                {active.type === "photo" && (
+                  <SnowTreePhoto src={customImage ?? active.src} />
+                )}
+              </div>
+              <div className="globe-inner" />
             </div>
-            <div className="globe-inner" />
           </div>
           {/* ガラス層 */}
           <div className="glass-layer"></div>
 
           {/* 土台 */}
           <SnowGlobeBase />
+          <div className="base-spacer" />
         </div>
         <div className="custom-image-panel">
           <label className="custom-label">
