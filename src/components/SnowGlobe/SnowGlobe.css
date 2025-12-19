@@ -38,16 +38,23 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+    max-width: var(--container-width);
+
   gap: 14px; /* ← ここで距離を決める */
 }
 .snowglobe-container {
   position: relative;
-  width: var(--container-width);
-  height: calc(var(--container-width) + 200px);
+  width: min(var(--container-width), 100%);
+  /* height: calc(var(--container-width) + 200px); */
     max-width: 100vw;
 
 }
-
+.globe-wrap {
+  position: relative;
+  margin-inline: auto;
+  width: var(--globe-size);
+  height: var(--globe-size);
+}
 .globe {
   position: absolute;
   top: 0; left: 50%;
@@ -165,10 +172,8 @@ h1 {
 }
 
 .base {
- position: absolute;
-  top: calc(var(--globe-size) + var(--base-gap));
-  left: 50%;
-  transform: translateX(-50%);
+ position: relative;
+  margin-top: -12px;
 }
 
 .base-connector {
@@ -210,6 +215,9 @@ h1 {
   color: rgba(120,120,120,0.6);
   letter-spacing: 0.2em;
   font-weight: 300;
+}
+.base-spacer {
+  height: 160px; /* base-body の高さ + 余白 */
 }
 
 .shake-btn {
@@ -407,7 +415,7 @@ h1 {
 
 
 .custom-image-panel {
-  /* margin-top: 20px; */
+  margin-top: 20px;
   display: flex;
   gap: 12px;
   align-items: center;
