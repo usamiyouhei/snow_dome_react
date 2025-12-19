@@ -35,7 +35,7 @@ const SnowGlobe = () => {
       </div>
       <input type="checkbox" id="toggle" className="check_box" />
 
-      <div className="snowGlobe-wrapper">
+      <div className="snowglobe-wrapper">
         <div className="snowglobe-container">
           <div className="globe">
             {/* 粒子（雪＋ラメ） */}
